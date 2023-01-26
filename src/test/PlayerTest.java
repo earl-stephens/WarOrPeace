@@ -39,5 +39,18 @@ class PlayerTest {
 		Assert.assertEquals("Clarisa", player.name);
 		Assert.assertEquals(3, player.deck.cards.size());
 	}
-
+	
+	@Test
+	void testForIfPlayerHasLost() {
+		player.deck.remove_card();
+		Assert.assertFalse(player.has_lost());
+		
+		player.deck.remove_card();
+		Assert.assertFalse(player.has_lost());
+		
+		player.deck.remove_card();
+		Assert.assertTrue(player.has_lost());
+		
+		Assert.assertEquals(0, player.deck.cards.size());
+	}
 }
