@@ -43,5 +43,18 @@ class DeckTest {
 		Assert.assertEquals(12, deck.cards[0].rank);
 		Assert.assertEquals(14, deck.cards[2].rank);
 	}
+	
+	@Test
+	void testThatCanGetHighRankingCards() {
+		Card card1 = new Card("diamond", "Queen", 12);
+		Card card2 = new Card("spade", "3", 3);
+		Card card3 = new Card("heart", "Ace", 14);
+		Card[] cards = {card1, card2, card3};
+		Deck deck = new Deck(cards);
+		
+		Assert.assertEquals(2, deck.high_ranking_cards().size());
+		Assert.assertEquals("Queen", deck.high_ranking_cards().get(0).value);
+		Assert.assertEquals("heart", deck.high_ranking_cards().get(1).suit);
+	}
 
 }
