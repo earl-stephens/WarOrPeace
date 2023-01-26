@@ -32,5 +32,12 @@ class PlayerTest {
 		
 		Assert.assertNotNull(player);
 	}
+	
+	@Test
+	void testForPlayerAttributes() {
+		
+		Assert.assertEquals("Clarisa", player.name);
+		Assert.assertEquals(3, player.deck.cards.size());
+	}
 
 }
