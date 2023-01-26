@@ -1,13 +1,12 @@
 package main;
 
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class Deck {
-	public Card[] cards;
+	public ArrayList<Card> cards;
 	
-	public Deck(Card[] cards) {
+	public Deck(ArrayList<Card> cards) {
 		this.cards = cards;
 	}
 	
@@ -24,9 +23,15 @@ public class Deck {
 	
 	public double percent_high_ranking() {
 		double numberHighRanking = high_ranking_cards().size();
-		double totalCards = cards.length;
+		double totalCards = cards.size();
 		double result = (numberHighRanking / totalCards) * 100;
 		DecimalFormat df = new DecimalFormat("#.##");
 		return Double.parseDouble(df.format(result));
+	}
+	
+	public Card remove_card() {
+		Card firstCard = cards.get(0);
+		cards.remove(0);
+		return firstCard;
 	}
 }
