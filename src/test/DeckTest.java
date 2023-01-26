@@ -56,5 +56,16 @@ class DeckTest {
 		Assert.assertEquals("Queen", deck.high_ranking_cards().get(0).value);
 		Assert.assertEquals("heart", deck.high_ranking_cards().get(1).suit);
 	}
+	
+	@Test
+	void testThatCanGetPercentHighRankingCards() {
+		Card card1 = new Card("diamond", "Queen", 12);
+		Card card2 = new Card("spade", "3", 3);
+		Card card3 = new Card("heart", "Ace", 14);
+		Card[] cards = {card1, card2, card3};
+		Deck deck = new Deck(cards);
+		
+		Assert.assertEquals(66.67, deck.percent_high_ranking(), 0.02);
+	}
 
 }

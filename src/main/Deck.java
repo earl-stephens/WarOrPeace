@@ -1,5 +1,7 @@
 package main;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class Deck {
@@ -18,5 +20,13 @@ public class Deck {
 			}
 		}
 		return highRankingCards;
+	}
+	
+	public double percent_high_ranking() {
+		double numberHighRanking = high_ranking_cards().size();
+		double totalCards = cards.length;
+		double result = (numberHighRanking / totalCards) * 100;
+		DecimalFormat df = new DecimalFormat("#.##");
+		return Double.parseDouble(df.format(result));
 	}
 }
