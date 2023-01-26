@@ -99,5 +99,25 @@ class DeckTest {
 		Assert.assertEquals(1, deck.high_ranking_cards().size());
 		Assert.assertEquals(50.00, deck.percent_high_ranking(), 0.02);
 	}
+	
+	@Test
+	void testThatCanAddACard() {
+		Card card1 = new Card("diamond", "Queen", 12);
+		Card card2 = new Card("spade", "3", 3);
+		Card card3 = new Card("heart", "Ace", 14);
+		ArrayList<Card> cards = new ArrayList<>();
+		cards.add(card1);
+		cards.add(card2);
+		cards.add(card3);		
+		Deck deck = new Deck(cards);
+		deck.remove_card();
+		
+		Card card4 = new Card("club", "5", 5);
+		deck.add_card(card4);
+		
+		Assert.assertEquals(3, deck.cards.size());
+		Assert.assertEquals("Ace", deck.high_ranking_cards().get(0).value);
+		Assert.assertEquals(33.33, deck.percent_high_ranking(), 0.02);
+	}
 
 }
