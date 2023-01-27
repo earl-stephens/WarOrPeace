@@ -11,4 +11,11 @@ public class Turn {
 		this.player1 = firstPlayer;
 		this.player2 = secondPlayer;
 	}
+	
+	public String type() {
+		if(player1.deck.cards.get(0) != player2.deck.cards.get(0)) {
+			return "basic";
+		}
+		return "";
+	}
 }

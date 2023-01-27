@@ -58,4 +58,9 @@ class TurnTest {
 	void testForSpoilsOfWarAttribute() {
 		Assert.assertEquals(0, turn.spoils_of_war.size());
 	}
+	
+	@Test
+	void testForBasicTurn() {
+		Assert.assertEquals("basic", turn.type());
+	}
 }
