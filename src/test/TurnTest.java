@@ -69,5 +69,6 @@ class TurnTest {
 	@Test
 	void testForWinnerOfBasicTurn() {
 		Assert.assertEquals("Megan", turn.winner().name);
+		Assert.assertNotEquals("Aurora", turn.winner().name);
 	}
 }

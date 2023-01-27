@@ -21,7 +21,7 @@ public class Turn {
 	
 	public Player winner() {
 		Player winner;
-		if(player1.deck.cards.get(0).rank > player2.deck.cards.get(0).rank) {
+		if(player1.deck.rank_of_card_at(0) > player2.deck.rank_of_card_at(0)) {
 			winner = player1;
 		} else {
 			winner = player2;
