@@ -43,8 +43,8 @@ class TurnMADTest {
 		turn = new Turn(player1, player2);
 	}
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testForMADType() {
+		Assert.assertEquals("mutually_assured_destruction", turn.type());
 	}
 
 }
