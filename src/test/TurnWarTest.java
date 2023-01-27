@@ -55,4 +55,5 @@ class TurnWarTest {
 		Assert.assertEquals("Aurora", turn.winner().name);
 		Assert.assertNotEquals("Megan", turn.winner().name);
 	}
+
 }
