@@ -47,5 +47,10 @@ class TurnTest {
 	void testForTurnObject() {
 		Assert.assertNotNull(turn);
 	}
-
+	
+	@Test
+	void testForPlayerAttributes() {
+		Assert.assertEquals("Megan", turn.player1.name);
+		Assert.assertEquals("Aurora", turn.player2.name);
+	}
 }
