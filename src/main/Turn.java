@@ -18,4 +18,14 @@ public class Turn {
 		}
 		return "";
 	}
+	
+	public Player winner() {
+		Player winner;
+		if(player1.deck.cards.get(0).rank > player2.deck.cards.get(0).rank) {
+			winner = player1;
+		} else {
+			winner = player2;
+		}
+		return winner;
+	}
 }

@@ -11,6 +11,8 @@ import org.junit.jupiter.api.Test;
 
 class TurnTest {
 	public Turn turn;
+	public Player player1;
+	public Player player2;
 	
 	@BeforeEach
 	void init() {
@@ -62,5 +64,10 @@ class TurnTest {
 	@Test
 	void testForBasicTurn() {
 		Assert.assertEquals("basic", turn.type());
+	}
+	
+	@Test
+	void testForWinnerOfBasicTurn() {
+		Assert.assertEquals("Megan", turn.winner().name);
 	}
 }
