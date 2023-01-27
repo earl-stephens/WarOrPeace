@@ -51,4 +51,20 @@ class TurnMADTest {
 	void testForMADWinner() {
 		Assert.assertNull(turn.winner());
 	}
+	
+	@Test
+	void testForMADPileCards() {
+		turn.pile_cards();
+		Assert.assertEquals(0, turn.spoils_of_war.size());
+	}
+	
+	@Test
+	void testForMADDecksAfterTurn() {
+		Player winner = turn.winner();
+		turn.pile_cards();
+		turn.award_spoils(winner);
+		
+		Assert.assertEquals(1, turn.player1.deck.cards.size());
+		Assert.assertEquals(1, turn.player2.deck.cards.size());
+	}
 }

@@ -68,10 +68,17 @@ public class Turn {
 	}
 	
 	public void award_spoils(Player winner) {
-		int size = spoils_of_war.size();
-		for(int i = 0; i < size; i++) {
-			winner.deck.add_card(spoils_of_war.get(0));
-			spoils_of_war.remove(0);
+		if(winner == null) {
+			for(int i = 0; i < 3; i++) {
+				player1.deck.cards.remove(0);
+				player2.deck.cards.remove(0);
+			}
+		} else {
+			int size = spoils_of_war.size();
+			for(int i = 0; i < size; i++) {
+				winner.deck.add_card(spoils_of_war.get(0));
+				spoils_of_war.remove(0);
+			}
 		}
 	}
 }
