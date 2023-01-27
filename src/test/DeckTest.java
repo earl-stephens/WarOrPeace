@@ -49,8 +49,8 @@ class DeckTest {
 		cards.add(card3);
 		Deck deck = new Deck(cards);
 		
-		Assert.assertEquals(12, deck.cards.get(0).rank);
-		Assert.assertEquals(14, deck.cards.get(2).rank);
+		Assert.assertEquals(12, deck.rank_of_card_at(0));
+		Assert.assertEquals(14, deck.rank_of_card_at(2));
 	}
 	
 	@Test
