@@ -49,16 +49,29 @@ public class Turn {
 	}
 	
 	public void pile_cards() {
-		if(type().equals("basic")) {
+		String type = type();
+		
+		switch (type) {
+		case "basic": 
 			spoils_of_war.add(player1.deck.remove_card());
 			spoils_of_war.add(player2.deck.remove_card());
+			break;
+		case "war":
+			int counter = 0;
+			while(counter < 3) {
+				spoils_of_war.add(player1.deck.remove_card());
+				spoils_of_war.add(player2.deck.remove_card());
+				counter++;
+			}
+			break;
 		}
 	}
 	
 	public void award_spoils(Player winner) {
-		winner.deck.add_card(spoils_of_war.get(0));
-		spoils_of_war.remove(0);
-		winner.deck.add_card(spoils_of_war.get(0));
-		spoils_of_war.remove(0);
+		int size = spoils_of_war.size();
+		for(int i = 0; i < size; i++) {
+			winner.deck.add_card(spoils_of_war.get(0));
+			spoils_of_war.remove(0);
+		}
 	}
 }

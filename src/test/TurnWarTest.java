@@ -56,4 +56,22 @@ class TurnWarTest {
 		Assert.assertNotEquals("Megan", turn.winner().name);
 	}
 
+	@Test
+	void testForWarTypeSpoilsOfWar() {
+		turn.winner();
+		turn.pile_cards();
+		
+		Assert.assertEquals(6, turn.spoils_of_war.size());
+	}
+	
+	@Test
+	void testForWarTypeAwardSpoils() {
+		Player winner = turn.winner();
+		turn.pile_cards();
+		
+		turn.award_spoils(winner);
+		
+		Assert.assertEquals(1, turn.player1.deck.cards.size());
+		Assert.assertEquals(7, turn.player2.deck.cards.size());
+	}
 }
