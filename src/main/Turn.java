@@ -13,10 +13,14 @@ public class Turn {
 	}
 	
 	public String type() {
-		if(player1.deck.cards.get(0) != player2.deck.cards.get(0)) {
+		if(player1.deck.cards.get(0).value != player2.deck.cards.get(0).value) {
 			return "basic";
+		} else if(player1.deck.cards.get(0).value == player2.deck.cards.get(0).value) {
+			return "war";
+		} else {
+			return "mutually_assured_destruction";
 		}
-		return "";
+		
 	}
 	
 	public Player winner() {
