@@ -47,4 +47,8 @@ class TurnMADTest {
 		Assert.assertEquals("mutually_assured_destruction", turn.type());
 	}
 
+	@Test
+	void testForMADWinner() {
+		Assert.assertNull(turn.winner());
+	}
 }
