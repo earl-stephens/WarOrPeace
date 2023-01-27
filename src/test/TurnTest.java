@@ -71,4 +71,11 @@ class TurnTest {
 		Assert.assertEquals("Megan", turn.winner().name);
 		Assert.assertNotEquals("Aurora", turn.winner().name);
 	}
+	
+	@Test
+	void testThePileCardsMethod() {
+		turn.pile_cards();
+		
+		Assert.assertEquals(2, turn.spoils_of_war.size());
+	}
 }

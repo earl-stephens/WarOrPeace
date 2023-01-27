@@ -28,4 +28,11 @@ public class Turn {
 		}
 		return winner;
 	}
+	
+	public void pile_cards() {
+		if(type().equals("basic")) {
+			spoils_of_war.add(player1.deck.remove_card());
+			spoils_of_war.add(player2.deck.remove_card());
+		}
+	}
 }
