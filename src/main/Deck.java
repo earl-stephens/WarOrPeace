@@ -10,6 +10,10 @@ public class Deck {
 		this.cards = cards;
 	}
 	
+	public int rank_of_card_at(int index) {
+		return cards.get(index).rank;
+	}
+	
 	public ArrayList<Card> high_ranking_cards() {
 		ArrayList<Card> highRankingCards = new ArrayList<>();
 		
