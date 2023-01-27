@@ -53,4 +53,9 @@ class TurnTest {
 		Assert.assertEquals("Megan", turn.player1.name);
 		Assert.assertEquals("Aurora", turn.player2.name);
 	}
+	
+	@Test
+	void testForSpoilsOfWarAttribute() {
+		Assert.assertEquals(0, turn.spoils_of_war.size());
+	}
 }

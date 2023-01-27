@@ -1,8 +1,11 @@
 package main;
 
+import java.util.ArrayList;
+
 public class Turn {
 	public Player player1;
 	public Player player2;
+	public ArrayList<Card> spoils_of_war = new ArrayList<>();
 	
 	public Turn(Player firstPlayer, Player secondPlayer) {
 		this.player1 = firstPlayer;
