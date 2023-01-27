@@ -78,4 +78,15 @@ class TurnTest {
 		
 		Assert.assertEquals(2, turn.spoils_of_war.size());
 	}
+	
+	@Test
+	void testAwardSpoilsMethod() {
+		Player winner = turn.winner();
+		turn.pile_cards();
+		
+		turn.award_spoils(winner);
+		
+		Assert.assertEquals(5, turn.player1.deck.cards.size());
+		Assert.assertEquals(3, turn.player2.deck.cards.size());
+	}
 }

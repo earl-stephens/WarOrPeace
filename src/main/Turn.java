@@ -35,4 +35,11 @@ public class Turn {
 			spoils_of_war.add(player2.deck.remove_card());
 		}
 	}
+	
+	public void award_spoils(Player winner) {
+		winner.deck.add_card(spoils_of_war.get(0));
+		spoils_of_war.remove(0);
+		winner.deck.add_card(spoils_of_war.get(0));
+		spoils_of_war.remove(0);
+	}
 }
