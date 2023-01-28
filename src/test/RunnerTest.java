@@ -35,4 +35,15 @@ class RunnerTest {
 		  Assert.assertEquals(0, runner.fullDeck.size());
 	  }
 	 
+	  @Test
+	  void testForCreatingPlayers() throws Exception {
+		  Runner runner = new Runner();
+		  runner.getFullDeck();
+		  runner.createTwoDecks(); 
+		  
+		  runner.createPlayers();
+		  
+		  Assert.assertNotNull(runner.player1);
+		  Assert.assertNotNull(runner.player2);
+	  }
 }

@@ -9,6 +9,10 @@ public class Runner {
 	public ArrayList<Card> fullDeck = new ArrayList<>();
 	public ArrayList<Card> deck1Cards = new ArrayList<>();
 	public ArrayList<Card> deck2Cards = new ArrayList<>();
+	public Player player1;
+	public Player player2;
+	public Deck deck1;
+	public Deck deck2;
 	
 	public void getFullDeck() throws FileNotFoundException {
 		try{
@@ -35,5 +39,12 @@ public class Runner {
 			deck2Cards.add(fullDeck.get(i));
 			fullDeck.remove(i); 
 		} 
+		deck1 = new Deck(deck1Cards);
+		deck2 = new Deck(deck2Cards);
+	}
+	
+	public void createPlayers() {
+		player1 = new Player("Megan", deck1);
+		player2 = new Player("Aurora", deck2);
 	}
 }
