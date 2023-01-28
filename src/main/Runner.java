@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class Runner {
 	public ArrayList<Card> fullDeck = new ArrayList<>();
+	public int fullDeckSize;
 	public ArrayList<Card> deck1Cards = new ArrayList<>();
 	public ArrayList<Card> deck2Cards = new ArrayList<>();
 	public Player player1;
@@ -28,6 +29,7 @@ public class Runner {
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found");
 		}
+		fullDeckSize = fullDeck.size();
 	}
 	
 	public void createTwoDecks() {
@@ -53,7 +55,9 @@ public class Runner {
 	}
 	
 	public void start() {
+		Displayer displayer = new Displayer();
 		Turn turn = new Turn(player1, player2);
+		displayer.loadScreen(fullDeckSize, player1.name, player2.name);
 		int counter = 0;
 		//while(!player1.has_lost() && !player2.has_lost())  {
 		while(counter < 1000001) {
