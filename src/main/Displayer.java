@@ -26,7 +26,7 @@ public class Displayer {
 			System.out.println("Turn " + counter + ": " + name + " won 2 cards.");
 			break;
 		case "war":
-			System.out.println("Turn " + counter + ": " + type + " - " + name + " won 6 cards.");
+			System.out.println("Turn " + counter + ": " + type.toUpperCase() + " - " + name + " won 6 cards.");
 			break;
 		case "mutually_assured_destruction":
 			System.out.println("Turn " + counter + ": *mutually assured destruction* 6 cards removed from play");
@@ -42,5 +42,9 @@ public class Displayer {
 			winner = player2.name;
 		}
 		System.out.println("*~*~*~* " + winner + " has won the game! *~*~*~*");
+	}
+	
+	public void draw() {
+		System.out.println("---- DRAW ----");
 	}
 }
