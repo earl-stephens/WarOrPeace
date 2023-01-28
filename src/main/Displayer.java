@@ -19,4 +19,18 @@ public class Displayer {
 		}
 		scanner.close();
 	}
+	
+	public void turnOutcome(int counter, String type, String name) {
+		switch(type)  {
+		case "basic":
+			System.out.println("Turn " + counter + ": " + name + " won 2 cards.");
+			break;
+		case "war":
+			System.out.println("Turn " + counter + ": " + type + " - " + name + " won 6 cards.");
+			break;
+		case "mutually_assured_destruction":
+			System.out.println("Turn " + counter + ": *mutually assured destruction* 6 cards removed from play");
+			break;
+		}
+	}
 }

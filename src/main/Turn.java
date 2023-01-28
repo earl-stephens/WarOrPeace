@@ -31,7 +31,7 @@ public class Turn {
 		
 		switch (type) {
 		case "basic": 
-			if(player1.deck.rank_of_card_at(0) > player2.deck.rank_of_card_at(0)) {
+	 		if(player1.deck.rank_of_card_at(0) > player2.deck.rank_of_card_at(0)) {
 				winner = player1;
 			} else {
 				winner = player2;
