@@ -15,4 +15,11 @@ class RunnerTest {
 		Assert.assertNotNull(runner);
 	}
 
+	@Test
+	void testForAFullDeckOfCards() throws Exception {
+		Runner runner = new Runner();
+		runner.getFullDeck();
+		
+		Assert.assertEquals(52, runner.fullDeck.size());
+	}
 }
