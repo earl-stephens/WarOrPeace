@@ -13,9 +13,11 @@ public class Turn {
 	}
 	
 	public String type() {
-		if(player1.deck.cards.get(0).value != player2.deck.cards.get(0).value) {
+		if(player1.deck.cards.get(0).rank != player2.deck.cards.get(0).rank) {
 			return "basic";
-		} else if((player1.deck.cards.get(0).value == player2.deck.cards.get(0).value) && (player1.deck.cards.get(2).value != player2.deck.cards.get(2).value)) {
+		} else if((player1.deck.cards.get(0).rank == player2.deck.cards.get(0).rank) && (player1.deck.cards.size() < 3 || player2.deck.cards.size() < 3)) {
+			return "basic";
+		} else if((player1.deck.cards.get(0).rank == player2.deck.cards.get(0).rank) && (player1.deck.cards.get(2).rank != player2.deck.cards.get(2).rank)) {
 			return "war";
 		} else {
 			return "mutually_assured_destruction";
@@ -29,7 +31,7 @@ public class Turn {
 		
 		switch (type) {
 		case "basic": 
-			if(player1.deck.rank_of_card_at(0) > player2.deck.rank_of_card_at(0)) {
+	 		if(player1.deck.rank_of_card_at(0) > player2.deck.rank_of_card_at(0)) {
 				winner = player1;
 			} else {
 				winner = player2;
