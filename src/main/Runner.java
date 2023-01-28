@@ -24,7 +24,7 @@ public class Runner {
 				fullDeck.add(card);
 			}
 			diskScanner.close();
-		} catch(FileNotFoundException e) {
+		} catch (FileNotFoundException e) {
 			System.out.println("File not found");
 		}
 	}
@@ -46,5 +46,11 @@ public class Runner {
 	public void createPlayers() {
 		player1 = new Player("Megan", deck1);
 		player2 = new Player("Aurora", deck2);
+	}
+	
+	public void start() {
+		Turn turn = new Turn(player1, player2);
+		System.out.println(turn.type());
+		System.out.println(turn.winner().name);
 	}
 }
