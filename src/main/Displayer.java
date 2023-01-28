@@ -33,4 +33,14 @@ public class Displayer {
 			break;
 		}
 	}
+	
+	public void winnerMessage(Player player1, Player player2) {
+		String winner;
+		if(player1.has_lost()) {
+			winner = player1.name;
+		} else {
+			winner = player2.name;
+		}
+		System.out.println("*~*~*~* " + winner + " has won the game! *~*~*~*");
+	}
 }

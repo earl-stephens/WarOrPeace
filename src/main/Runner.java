@@ -58,20 +58,17 @@ public class Runner {
 		Displayer displayer = new Displayer();
 		Turn turn = new Turn(player1, player2);
 		displayer.loadScreen(fullDeckSize, player1.name, player2.name);
+		
 		int counter = 0;
 		while(counter < 1000001) {
-		//System.out.println(player1.deck.cards.get(0).rank);
-		//System.out.println(player2.deck.cards.get(0).rank);
-		//System.out.println(turn.type());
-		//System.out.println(turn.winner().name);
 			displayer.turnOutcome(counter, turn.type(), turn.winner().name);
 		turn.pile_cards();
 		
 		if(player1.has_lost() || player2.has_lost()) {
-			System.out.println("Megan " + player1.has_lost());
-			System.out.println("Aurora " + player2.has_lost());
+			displayer.winnerMessage(player1, player2);
 			break;
 		}
+		
 		turn.award_spoils(turn.winner());
 		System.out.println(turn.winner().deck.cards.size());
 		
