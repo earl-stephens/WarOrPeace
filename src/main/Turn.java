@@ -13,9 +13,11 @@ public class Turn {
 	}
 	
 	public String type() {
-		if(player1.deck.cards.get(0).value != player2.deck.cards.get(0).value) {
+		if(player1.deck.cards.get(0).rank != player2.deck.cards.get(0).rank) {
 			return "basic";
-		} else if((player1.deck.cards.get(0).value == player2.deck.cards.get(0).value) && (player1.deck.cards.get(2).value != player2.deck.cards.get(2).value)) {
+		} else if((player1.deck.cards.get(0).rank == player2.deck.cards.get(0).rank) && (player1.deck.cards.size() < 3 || player2.deck.cards.size() < 3)) {
+			return "basic";
+		} else if((player1.deck.cards.get(0).rank == player2.deck.cards.get(0).rank) && (player1.deck.cards.get(2).rank != player2.deck.cards.get(2).rank)) {
 			return "war";
 		} else {
 			return "mutually_assured_destruction";

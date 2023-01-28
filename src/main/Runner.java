@@ -3,6 +3,7 @@ package main;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Runner {
@@ -31,13 +32,16 @@ public class Runner {
 	
 	public void createTwoDecks() {
 		for(int i = 51; i > 25; i--) {
-			int randomCard = (int)Math.random() * i;
+			Random random = new Random();
+			int randomCard = random.nextInt(i);
 			deck1Cards.add(fullDeck.get(randomCard));
 			fullDeck.remove(randomCard);
 		}
-		for(int i = 25; i >= 0; i--) { 
-			deck2Cards.add(fullDeck.get(i));
-			fullDeck.remove(i); 
+		for(int i = 26; i > 0; i--) { 
+			Random random = new Random();
+			int randomCard = random.nextInt(i);
+			deck2Cards.add(fullDeck.get(randomCard));
+			fullDeck.remove(randomCard); 
 		} 
 		deck1 = new Deck(deck1Cards);
 		deck2 = new Deck(deck2Cards);
@@ -50,7 +54,25 @@ public class Runner {
 	
 	public void start() {
 		Turn turn = new Turn(player1, player2);
+		int counter = 0;
+		//while(!player1.has_lost() && !player2.has_lost())  {
+		while(counter < 1000001) {
+		System.out.println(player1.deck.cards.get(0).rank);
+		System.out.println(player2.deck.cards.get(0).rank);
 		System.out.println(turn.type());
 		System.out.println(turn.winner().name);
+		turn.pile_cards();
+		
+		if(player1.has_lost() || player2.has_lost()) {
+			System.out.println("Megan " + player1.has_lost());
+			System.out.println("Aurora " + player2.has_lost());
+			break;
+		}
+		turn.award_spoils(turn.winner());
+		System.out.println(turn.winner().deck.cards.size());
+		
+		counter++;
+		}
+	
 	}
 }
