@@ -72,6 +72,7 @@ public class Runner {
 		turn.award_spoils(turn.winner());
 		counter++;
 		}
+		
 		if(counter == 1000000) {
 			displayer.draw();
 		}
